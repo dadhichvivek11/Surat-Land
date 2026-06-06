@@ -1,1 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Land Consultant – Purchase With Purpose</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Barlow+Condensed:wght@300;400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --soil: #3d2b1f;
+    --earth: #7a4f35;
+    --sand: #c8a97e;
+    --wheat: #e8d5b0;
+    --cream: #f5efe6;
+    --green: #2e5c3e;
+    --sage: #5a8a6a;
+    --gold: #c9932a;
+    --white: #fdfaf5;
+  }
 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--cream);
+    color: var(--soil);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    height: 52px;
+    background: var(--soil);
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .topbar-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--wheat);
+    text-transform: uppercase;
+  }
+
+  .topbar-call {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .topbar-call:hover { color: var(--wheat); }
+  .topbar-call svg { width: 16px; height: 16px; fill: currentColor; }
+
+  /* ── HERO ── */
+  .hero {
+    padding-top: 52px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    position: relative;
+    background:
+      radial-gradient(ellipse 70% 50% at 80% 60%, rgba(90,138,106,0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 70% at 10% 80%, rgba(201,147,42,0.10) 0%, transparent 60%),
+      var(--cream);
+  }
+
+  /* Decorative grid lines */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 52px 0 0 0;
+    background-image:
+      linear-gradient(rgba(61,43,31,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(61,43,31,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Eyebrow */
+  .eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 16px;
+  }
+
+  /* Main title */
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 10vw, 100px);
+    font-weight: 900;
+    line-height: 0.9;
+    text-align: center;
+    color: var(--soil);
+    letter-spacing: -2px;
+  }
+  .hero-title span {
+    color: var(--green);
+    display: block;
+  }
+  .hero-title em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  /* Dotted separator */
+  .separator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 28px 0;
+    width: 260px;
+  }
+  .separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--sand);
+  }
+  .separator-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+
+  /* Tagline */
+  .tagline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--earth);
+    text-align: center;
+  }
+
+  /* ── FORM CARD ── */
+  .form-wrap {
+    position: relative;
+    z-index: 2;
+    padding: 0 16px 60px;
+  }
+
+  .form-card {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-top: 4px solid var(--green);
+    box-shadow: 0 20px 60px rgba(61,43,31,0.12), 0 4px 16px rgba(61,43,31,0.08);
+    padding: 40px 40px 36px;
+    position: relative;
+  }
+
+  .form-card::before {
+    content: 'LAND SEARCH';
+    position: absolute;
+    top: -14px;
+    left: 40px;
+    background: var(--green);
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    padding: 4px 16px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 28px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .form-group.full { grid-column: 1 / -1; }
+
+  label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--earth);
+  }
+
+  input, select, textarea {
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    color: var(--soil);
+    background: var(--cream);
+    border: 1px solid #d9c9b3;
+    padding: 10px 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(46,92,62,0.10);
+    background: var(--white);
+  }
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a4f35' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+  }
+  textarea { resize: vertical; min-height: 90px; }
+
+  /* Land type chips */
+  .land-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 2px;
+  }
+  .chip-input { display: none; }
+  .chip-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border: 1px solid var(--sand);
+    color: var(--earth);
+    cursor: pointer;
+    transition: all 0.18s;
+    background: var(--cream);
+    user-select: none;
+  }
+  .chip-input:checked + .chip-label {
+    background: var(--green);
+    border-color: var(--green);
+    color: var(--white);
+  }
+  .chip-label:hover { border-color: var(--green); color: var(--green); }
+  .chip-input:checked + .chip-label:hover { color: var(--white); }
+
+  /* Submit */
+  .submit-btn {
+    width: 100%;
+    margin-top: 28px;
+    padding: 16px;
+    background: var(--soil);
+    color: var(--wheat);
+    border: none;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.25s;
+  }
+  .submit-btn::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: var(--green);
+    transition: width 0.35s ease;
+    z-index: 0;
+  }
+  .submit-btn:hover::after { width: 100%; }
+  .submit-btn span { position: relative; z-index: 1; }
+
+  /* ── PUNCH LINE ── */
+  .punchline {
+    text-align: center;
+    padding: 56px 24px 64px;
+    background: var(--soil);
+    position: relative;
+    overflow: hidden;
+  }
+  .punchline::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 500px; height: 200px;
+    background: radial-gradient(ellipse, rgba(201,147,42,0.15) 0%, transparent 70%);
+  }
+  .punch-dots {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .punch-dot {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .punch-dot + .punch-dot::before {
+    content: '•';
+    font-size: 18px;
+    color: var(--earth);
+  }
+  .punch-main {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 6vw, 52px);
+    font-weight: 700;
+    color: var(--wheat);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+  .punch-main em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .punch-sub {
+    margin-top: 14px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--sand);
+  }
+
+  /* ── WHATSAPP BUTTON ── */
+  .wa-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 200;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: waPulse 2.5s ease-in-out infinite;
+  }
+  .wa-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(37,211,102,0.60);
+    animation: none;
+  }
+  .wa-btn svg { width: 30px; height: 30px; fill: #fff; }
+
+  @keyframes waPulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+    50% { box-shadow: 0 4px 28px rgba(37,211,102,0.70), 0 0 0 8px rgba(37,211,102,0.12); }
+  }
+
+  /* ── SUCCESS MSG ── */
+  .success-msg {
+    display: none;
+    margin-top: 16px;
+    padding: 14px 20px;
+    background: rgba(46,92,62,0.10);
+    border-left: 3px solid var(--green);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: var(--green);
+    font-weight: 600;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .form-card { padding: 36px 20px 28px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: 1; }
+    .topbar-logo { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="topbar-logo">Land Consultant</div>
+  <a class="topbar-call" href="tel:+919998972850">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    Call — +91 99989 72850
+  </a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">India's Trusted Land Advisory</div>
+    <h1 class="hero-title">
+      Find Your
+      <span>Perfect</span>
+      <em>Land.</em>
+    </h1>
+    <div class="separator">
+      <div class="separator-dot"></div>
+      <div class="separator-dot"></div>
+      <div class="separator-dot"></div>
+    </div>
+    <p class="tagline">Every acre tells a story — let us find yours</p>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-wrap">
+    <div class="form-card">
+      <form id="landForm" onsubmit="handleSubmit(event)">
+        <div class="form-grid">
+
+          <!-- Land Type -->
+          <div class="form-group full">
+            <label>Land Type</label>
+            <div class="land-chips">
+              <input class="chip-input" type="radio" name="land" id="res" value="Residential">
+              <label class="chip-label" for="res">Residential</label>
+
+              <input class="chip-input" type="radio" name="land" id="com" value="Commercial">
+              <label class="chip-label" for="com">Commercial</label>
+
+              <input class="chip-input" type="radio" name="land" id="agr" value="Agriculture">
+              <label class="chip-label" for="agr">Agriculture</label>
+
+              <input class="chip-input" type="radio" name="land" id="ind" value="Industrial">
+              <label class="chip-label" for="ind">Industrial</label>
+
+              <input class="chip-input" type="radio" name="land" id="farm" value="Farm">
+              <label class="chip-label" for="farm">Farm</label>
+
+              <input class="chip-input" type="radio" name="land" id="na" value="Non-Agriculture">
+              <label class="chip-label" for="na">Non-Agriculture</label>
+            </div>
+          </div>
+
+          <!-- Size -->
+          <div class="form-group">
+            <label>Size / Area</label>
+            <input type="text" placeholder="e.g. 500 sq yd, 2 acres, 10 bigha" required>
+          </div>
+
+          <!-- Location -->
+          <div class="form-group">
+            <label>Preferred Location</label>
+            <input type="text" placeholder="City, Village, Taluka or Area" required>
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+
+          <!-- Query -->
+          <div class="form-group">
+            <label>Your Query</label>
+            <input type="text" placeholder="Budget, use, timeline…">
+          </div>
+
+          <!-- Message -->
+          <div class="form-group full">
+            <label>Additional Details</label>
+            <textarea placeholder="Tell us more about what you're looking for — purpose, budget range, timeline, or any specific requirements…"></textarea>
+          </div>
+
+        </div>
+
+        <button type="submit" class="submit-btn"><span>Submit Enquiry</span></button>
+        <div class="success-msg" id="successMsg">✓ Enquiry received! We'll contact you shortly.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- PUNCHLINE -->
+<section class="punchline">
+  <div class="punch-dots">
+    <div class="punch-dot">Land</div>
+    <div class="punch-dot">Purpose</div>
+    <div class="punch-dot">Future</div>
+  </div>
+  <div class="punch-main">Purchase With <em>Purpose.</em></div>
+  <div class="punch-sub">Your land. Your legacy. Our expertise.</div>
+</section>
+
+<!-- WHATSAPP -->
+<a class="wa-btn" href="https://wa.me/919998972850" target="_blank" title="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 2.7A13.3 13.3 0 0 0 2.7 16c0 2.35.62 4.65 1.8 6.67L2.7 29.3l6.8-1.78A13.3 13.3 0 1 0 16 2.7zm0 24.27a11 11 0 0 1-5.6-1.53l-.4-.24-4.04 1.06 1.08-3.93-.26-.4A11 11 0 1 1 16 26.97zm6.05-8.22c-.33-.17-1.96-.97-2.27-1.08-.3-.11-.52-.17-.74.17-.22.33-.85 1.08-1.04 1.3-.19.22-.38.25-.71.08-.33-.17-1.4-.51-2.66-1.64-.98-.88-1.64-1.96-1.84-2.3-.19-.33-.02-.5.15-.67.15-.15.33-.39.5-.58.17-.19.22-.33.33-.55.11-.22.06-.41-.03-.58-.08-.17-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56-.19-.01-.41-.01-.63-.01s-.58.08-.88.41c-.3.33-1.15 1.12-1.15 2.74s1.18 3.18 1.34 3.4c.17.22 2.32 3.54 5.62 4.97.79.34 1.4.54 1.88.69.79.25 1.51.22 2.08.13.63-.1 1.96-.8 2.24-1.57.28-.77.28-1.43.19-1.57-.08-.14-.3-.22-.63-.39z"/>
+  </svg>
+</a>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.querySelector('.submit-btn span');
+  btn.textContent = 'Sending…';
+  setTimeout(() => {
+    btn.textContent = 'Submit Enquiry';
+    document.getElementById('successMsg').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => {
+      document.getElementById('successMsg').style.display = 'none';
+    }, 4000);
+  }, 900);
+}
+</script>
+</body>
+</html>
