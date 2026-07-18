@@ -3,703 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trusted Land Advisory | Land Consultants, Surat Region</title>
-<meta name="description" content="Independent land advisory across Surat, Vyara, Valsad and Baroda. Purchase with purpose, backed by clear title, honest pricing and complete legal support.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Trusted Land Advisory | Purchase Land With Purpose</title>
 <style>
-  :root{
-    --ivory:#FAF9F4;
-    --ivory-dim:#F1EEE4;
-    --navy:#12222F;
-    --navy-deep:#0B1720;
-    --gold:#AD8A55;
-    --gold-soft:#E7D9BC;
-    --slate:#5B6670;
-    --line:#DDD6C4;
-    --radius:2px;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--ivory);
-    color:var(--navy);
-    font-family:'Inter', sans-serif;
-    line-height:1.6;
-    font-size:16px;
-  }
-  h1,h2,h3{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    letter-spacing:-0.01em;
-    color:var(--navy);
-  }
-  .label{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.72rem;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--gold);
-  }
-  a{color:inherit; text-decoration:none;}
-  img{max-width:100%; display:block;}
-  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
-  section{padding:96px 0;}
-  @media (max-width:720px){ section{padding:64px 0;} }
-
-  /* ---------- header ---------- */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(18,34,47,0.96);
-    backdrop-filter:blur(6px);
-  }
-  .navbar{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:18px 24px;
-    max-width:1120px; margin:0 auto;
-  }
-  .brand{
-    font-family:'Fraunces', serif;
-    font-size:1.15rem;
-    color:var(--ivory);
-    letter-spacing:0.01em;
-  }
-  .brand span{color:var(--gold);}
-  nav ul{
-    display:flex; gap:28px; list-style:none;
-  }
-  nav a{
-    color:var(--ivory-dim);
-    font-size:0.87rem;
-    font-weight:500;
-    padding-bottom:4px;
-    border-bottom:1px solid transparent;
-    transition:border-color 0.2s ease, color 0.2s ease;
-  }
-  nav a:hover{ color:var(--ivory); border-color:var(--gold);}
-  .nav-toggle{ display:none; background:none; border:none; color:var(--ivory); font-size:1.4rem; cursor:pointer;}
-  @media (max-width:840px){
-    nav{
-      position:absolute; top:100%; left:0; right:0;
-      background:var(--navy); flex-direction:column;
-      display:none;
-    }
-    nav.open{display:flex;}
-    nav ul{flex-direction:column; padding:8px 24px 20px; gap:16px;}
-    .nav-toggle{display:block;}
-  }
-
-  /* ---------- topo divider, the signature motif ---------- */
-  .contour{
-    width:100%; height:34px; display:block;
-  }
-  .contour path{ fill:none; stroke:var(--gold); stroke-width:1; opacity:0.55; }
-  .contour path:nth-child(2){ opacity:0.3; }
-  .contour path:nth-child(3){ opacity:0.15; }
-
-  /* ---------- hero ---------- */
-  .hero{
-    background:
-      radial-gradient(ellipse at 20% 0%, rgba(173,138,85,0.12), transparent 55%),
-      linear-gradient(180deg, var(--navy-deep), var(--navy) 70%);
-    color:var(--ivory);
-    padding:120px 0 90px;
-    position:relative;
-    overflow:hidden;
-  }
-  .hero .wrap{position:relative; z-index:2;}
-  .hero .label{color:var(--gold-soft);}
-  .hero h1{
-    font-size:clamp(2.4rem, 5vw, 3.6rem);
-    color:var(--ivory);
-    max-width:14ch;
-    margin:18px 0 22px;
-    line-height:1.08;
-  }
-  .hero p.lead{
-    max-width:56ch;
-    color:#C7CDD3;
-    font-size:1.05rem;
-    margin-bottom:36px;
-  }
-  .hero-map{
-    position:absolute; right:-60px; top:40px; width:420px; opacity:0.9;
-  }
-  @media (max-width:900px){ .hero-map{display:none;} }
-  .cta-row{ display:flex; gap:16px; flex-wrap:wrap; }
-  .btn{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:13px 26px;
-    font-size:0.92rem; font-weight:600;
-    border-radius:var(--radius);
-    border:1px solid transparent;
-    cursor:pointer;
-    transition:transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
-  }
-  .btn:hover{ transform:translateY(-1px); }
-  .btn-gold{ background:var(--gold); color:var(--navy-deep); }
-  .btn-gold:hover{ background:#C3A06B; }
-  .btn-outline{ border-color:rgba(250,249,244,0.35); color:var(--ivory); }
-  .btn-outline:hover{ border-color:var(--ivory); }
-  .btn-navy{ background:var(--navy); color:var(--ivory); }
-  .btn-navy:hover{ background:#1B3245; }
-
-  /* ---------- section heads ---------- */
-  .section-head{ max-width:60ch; margin-bottom:48px; }
-  .section-head h2{ font-size:clamp(1.7rem,3vw,2.3rem); margin-top:10px; }
-  .section-head p{ color:var(--slate); margin-top:14px; }
-
-  /* ---------- coverage ---------- */
-  .coverage-body{
-    display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
-  }
-  @media (max-width:820px){ .coverage-body{grid-template-columns:1fr;} }
-  .corridor-list{ margin-top:22px; display:flex; flex-direction:column; gap:14px; }
-  .corridor-item{
-    display:flex; gap:14px; align-items:baseline;
-    padding-bottom:14px; border-bottom:1px solid var(--line);
-  }
-  .corridor-item .label{ min-width:110px; }
-  .corridor-item p{ color:var(--slate); font-size:0.95rem; }
-
-  /* ---------- purpose grid ---------- */
-  .purpose-grid{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-  @media (max-width:900px){ .purpose-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:560px){ .purpose-grid{grid-template-columns:1fr;} }
-  .purpose-card{
-    background:var(--ivory);
-    padding:30px 26px;
-    transition:background 0.2s ease;
-  }
-  .purpose-card:hover{ background:var(--ivory-dim); }
-  .purpose-card svg{ width:34px; height:34px; margin-bottom:16px; }
-  .purpose-card svg *{ stroke:var(--gold); fill:none; stroke-width:1.4; }
-  .purpose-card h3{ font-size:1.05rem; margin-bottom:8px; }
-  .purpose-card p{ color:var(--slate); font-size:0.9rem; }
-
-  /* ---------- what we do ---------- */
-  .service-band{ background:var(--navy); color:var(--ivory); }
-  .service-band .section-head p{ color:#B9C1C8; }
-  .service-band .label{ color:var(--gold-soft); }
-  .service-list{
-    display:grid; grid-template-columns:1fr 1fr; gap:24px 48px; margin-top:8px;
-  }
-  @media (max-width:700px){ .service-list{grid-template-columns:1fr;} }
-  .service-item{
-    display:flex; gap:16px; align-items:flex-start;
-    padding-top:20px; border-top:1px solid rgba(250,249,244,0.14);
-  }
-  .service-item .num{ font-family:'IBM Plex Mono', monospace; color:var(--gold); font-size:0.85rem; padding-top:2px; }
-  .service-item h3{ font-size:1rem; color:var(--ivory); margin-bottom:4px; }
-  .service-item p{ color:#B9C1C8; font-size:0.9rem; }
-
-  /* ---------- two-col info (NRI / title) ---------- */
-  .info-split{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; }
-  @media (max-width:820px){ .info-split{grid-template-columns:1fr;} }
-  .info-split.reverse .visual{ order:2; }
-  .visual{
-    background:var(--ivory-dim);
-    border:1px solid var(--line);
-    padding:36px;
-    display:flex; align-items:center; justify-content:center;
-    min-height:260px;
-  }
-  .visual svg{ width:100%; max-width:280px; }
-  .visual svg *{ stroke:var(--navy); fill:none; stroke-width:1.2; }
-  .visual svg .gold{ stroke:var(--gold); }
-  .info-copy h2{ margin-bottom:16px; }
-  .info-copy p{ color:var(--slate); margin-bottom:14px; }
-  .checklist{ margin-top:20px; display:flex; flex-direction:column; gap:10px; }
-  .checklist li{ list-style:none; display:flex; gap:10px; font-size:0.92rem; color:var(--navy); }
-  .checklist li::before{ content:"—"; color:var(--gold); }
-
-  /* ---------- process ---------- */
-  .process-list{ margin-top:10px; }
-  .process-row{
-    display:grid; grid-template-columns:70px 1fr;
-    gap:20px; padding:24px 0; border-bottom:1px solid var(--line);
-  }
-  .process-row:first-child{ border-top:1px solid var(--line); }
-  .process-row .num{ font-family:'IBM Plex Mono', monospace; color:var(--gold); font-size:1rem; }
-  .process-row h3{ font-size:1.05rem; margin-bottom:4px; }
-  .process-row p{ color:var(--slate); font-size:0.92rem; max-width:60ch; }
-
-  /* ---------- listings ---------- */
-  .listing-toolbar{
-    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:18px;
-    margin-bottom:36px;
-  }
-  .listing-grid{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:22px;
-  }
-  @media (max-width:960px){ .listing-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:640px){ .listing-grid{grid-template-columns:1fr;} }
-  .listing-card{
-    border:1px solid var(--line); background:var(--ivory);
-    display:flex; flex-direction:column;
-  }
-  .listing-media{
-    height:170px; background:var(--ivory-dim);
-    display:flex; align-items:center; justify-content:center;
-    overflow:hidden; border-bottom:1px solid var(--line);
-  }
-  .listing-media img{ width:100%; height:100%; object-fit:cover; }
-  .listing-media svg{ width:64px; height:64px; }
-  .listing-media svg *{ stroke:var(--gold); fill:none; stroke-width:1.3; }
-  .listing-body{ padding:20px 20px 22px; display:flex; flex-direction:column; gap:8px; flex:1; }
-  .listing-type{ font-family:'IBM Plex Mono', monospace; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); }
-  .listing-body h3{ font-size:1.05rem; }
-  .listing-meta{ display:flex; gap:14px; color:var(--slate); font-size:0.85rem; }
-  .listing-body p.desc{ color:var(--slate); font-size:0.88rem; margin-top:4px; }
-  .listing-body .price{ margin-top:auto; font-family:'IBM Plex Mono', monospace; font-size:0.92rem; color:var(--navy); padding-top:10px; }
-
-  .add-listing{
-    margin-top:56px; border:1px dashed var(--line); padding:32px;
-  }
-  .add-listing summary{
-    cursor:pointer; font-family:'IBM Plex Mono', monospace; font-size:0.8rem;
-    letter-spacing:0.08em; text-transform:uppercase; color:var(--gold);
-    list-style:none;
-  }
-  .add-listing summary::-webkit-details-marker{ display:none; }
-  .listing-form{
-    display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:24px;
-  }
-  @media (max-width:640px){ .listing-form{grid-template-columns:1fr;} }
-  .field{ display:flex; flex-direction:column; gap:6px; }
-  .field.full{ grid-column:1 / -1; }
-  .field label{ font-size:0.8rem; color:var(--slate); }
-  .field input, .field select, .field textarea{
-    border:1px solid var(--line); background:var(--ivory);
-    padding:11px 12px; font-family:'Inter', sans-serif; font-size:0.92rem;
-    border-radius:var(--radius); color:var(--navy);
-  }
-  .field textarea{ resize:vertical; min-height:80px; }
-  .field input:focus, .field select:focus, .field textarea:focus{
-    outline:2px solid var(--gold); outline-offset:1px;
-  }
-
-  /* ---------- contact ---------- */
-  .contact-band{ background:var(--navy-deep); color:var(--ivory); }
-  .contact-band .label{ color:var(--gold-soft); }
-  .contact-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; margin-top:8px;
-  }
-  @media (max-width:820px){ .contact-grid{grid-template-columns:1fr;} }
-  .contact-detail{ display:flex; flex-direction:column; gap:18px; }
-  .contact-phone{ font-family:'IBM Plex Mono', monospace; font-size:1.3rem; color:var(--ivory); }
-  .contact-detail p{ color:#B9C1C8; }
-  .wa-form textarea{
-    width:100%; min-height:120px; padding:14px;
-    background:rgba(250,249,244,0.04); border:1px solid rgba(250,249,244,0.25);
-    color:var(--ivory); font-family:'Inter', sans-serif; border-radius:var(--radius);
-    resize:vertical;
-  }
-  .wa-form textarea:focus{ outline:1px solid var(--gold); }
-  .wa-form{ display:flex; flex-direction:column; gap:14px; }
-  .thankyou{
-    display:none; margin-top:4px; padding:14px 16px;
-    border:1px solid var(--gold); color:var(--gold-soft); font-size:0.9rem;
-  }
-  .thankyou.show{ display:block; }
-
-  footer{
-    background:var(--navy); color:#8C97A0; padding:40px 0; font-size:0.85rem;
-  }
-  .footer-row{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
-  .footer-row .brand{ font-size:1rem; }
-
-  @media (prefers-reduced-motion: reduce){
-    *{ transition:none !important; scroll-behavior:auto !important; }
-  }
+body{margin:0;font-family:Arial,sans-serif;color:#333;background:#fafafa}
+header{background:linear-gradient(rgba(0,70,40,.7),rgba(0,70,40,.7)),url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=80') center/cover;height:70vh;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero{max-width:800px;padding:20px}
+.btn{background:#1b7f3a;color:#fff;padding:12px 24px;text-decoration:none;border-radius:5px;display:inline-block;margin-top:15px}
+section{padding:50px 8%}
+h2{color:#1b7f3a}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1);overflow:hidden}
+.card img{width:100%;height:180px;object-fit:cover}
+.card div{padding:15px}
+.service{background:#fff;padding:20px;border-left:4px solid #1b7f3a;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+form input,form textarea,form select{width:100%;padding:10px;margin:8px 0}
+button{background:#1b7f3a;color:#fff;border:none;padding:12px 18px;cursor:pointer}
+footer{background:#164d2a;color:#fff;padding:30px;text-align:center}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50px;text-decoration:none;font-weight:bold}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="navbar">
-    <a href="#top" class="brand">Trusted <span>Land</span> Advisory</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
-    <nav id="siteNav">
-      <ul>
-        <li><a href="#purpose">Purpose</a></li>
-        <li><a href="#listings">Land We Offer</a></li>
-        <li><a href="#nri">NRI Services</a></li>
-        <li><a href="#title">Title Clearance</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+<div class="hero">
+<h1>Trusted Land Advisory</h1>
+<h3>Purchase Land With Purpose</h3>
+<p>Expert Land Consultants across Surat, Vyara, Valsad and Vadodara Region.</p>
+<a class="btn" href="#contact">Share Your Requirement</a>
+</div>
 </header>
 
-<section class="hero" id="top">
-  <div class="wrap">
-    <p class="label">Land advisory · Surat region</p>
-    <h1>Purchase With Purpose : Backed by a Clear Title.</h1>
-    <p class="lead">We help you find and acquire the right parcel of land across Surat, Navsari, Bharuch and Vyrara District. Location guidance, genuine pricing, and complete legal support, from first enquiry to registered ownership.</p>
-    <div class="cta-row">
-            <a href="#purpose" class="btn btn-outline">See what we help with</a>
-    </div>
-  </div>
-  <svg class="hero-map" viewBox="0 0 420 500" xmlns="http://www.w3.org/2000/svg">
-    <g fill="none" stroke="#AD8A55" stroke-width="1" opacity="0.6">
-      <path d="M120 60 C 160 140, 100 220, 150 300 C 190 360, 160 420, 200 470" />
-      <circle cx="120" cy="60" r="4" fill="#AD8A55" stroke="none"/>
-      <circle cx="150" cy="300" r="4" fill="#AD8A55" stroke="none"/>
-      <circle cx="200" cy="470" r="4" fill="#AD8A55" stroke="none"/>
-      <circle cx="185" cy="150" r="4" fill="#E7D9BC" stroke="none"/>
-    </g>
-    <g fill="none" stroke="#243A4B" stroke-width="1">
-      <path d="M0 100 C 80 130, 160 60, 260 100 S 420 160, 420 130" opacity="0.5"/>
-      <path d="M0 200 C 90 230, 170 170, 260 210 S 420 250, 420 220" opacity="0.35"/>
-      <path d="M0 320 C 100 350, 180 300, 280 340 S 420 380, 420 350" opacity="0.25"/>
-    </g>
-  </svg>
+<section>
+<h2>Who We Are</h2>
+<p>We are specialist land consultants helping investors, industries, developers, NRIs and land owners acquire or dispose of land with complete confidence. Our focus is to identify the right location, negotiate the best price, perform legal due diligence, verify title, support NA conversion and manage the complete acquisition process.</p>
 </section>
 
-<svg class="contour" viewBox="0 0 1200 34" preserveAspectRatio="none">
-  <path d="M0 17 C 200 0, 300 34, 500 17 S 900 0, 1200 17" />
-  <path d="M0 24 C 200 8, 300 40, 500 24 S 900 8, 1200 24" />
-  <path d="M0 10 C 200 26, 300 -6, 500 10 S 900 26, 1200 10" />
-</svg>
-
-<section id="coverage">
-  <div class="wrap coverage-body">
-    <div>
-      <p class="label">Where we work</p>
-      <h2>Four Segments, One Region, No Guesswork.</h2>
-      <p style="color:var(--slate); margin-top:14px;">We work only in the land we know. That means every parcel we bring to you has been physically seen, checked against revenue records, and weighed against what you are actually trying to build.</p>
-    </div>
-    <div class="corridor-list">
-      <div class="corridor-item"><span class="label"></span><p>Urban and peripheral parcels for residential, commercial, and mixed use.</p></div>
-      <div class="corridor-item"><span class="label"></span><p>Farmland, plantation land, and land suited to community or retreat living.</p></div>
-      <div class="corridor-item"><span class="label"></span><p>Riverside and coastal-belt parcels, industrial corridors, resort-suited land.</p></div>
-      <div class="corridor-item"><span class="label"></span><p>Industrial land along the highway belt and large parcels for long term holding.</p></div>
-    </div>
-  </div>
+<section>
+<h2>Coverage Area</h2>
+<div class="grid">
+<div class="service">Surat City</div>
+<div class="service">Surat – Vyara Corridor</div>
+<div class="service">Surat – Valsad Corridor</div>
+<div class="service">Surat – Vadodara Corridor</div>
+</div>
 </section>
 
-<section id="purpose" style="background:var(--ivory-dim);">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="label">Purchase with purpose</p>
-      <h2>Every acquisition starts with a reason. We plan around it.</h2>
-      <p>Tell us the purpose, and we work backward from there, on location, on budget, and on what the land needs to legally support that use.</p>
-    </div>
-    <div class="purpose-grid">
-      <div class="purpose-card">
-        <svg viewBox="0 0 40 40"><path d="M4 34 L14 20 L20 26 L28 12 L36 22"/><path d="M4 34 H36"/></svg>
-        <h3>Long term investment</h3>
-        <p>Land selected for appreciation and holding, matched to your time horizon and budget.</p>
-      </div>
-      <div class="purpose-card">
-        <svg viewBox="0 0 40 40"><rect x="6" y="16" width="10" height="18"/><rect x="18" y="8" width="10" height="26"/><path d="M6 16 L11 10 L16 16"/><path d="M28 22 H34 V34 H28"/></svg>
-        <h3>Industrial land</h3>
-        <p>Parcels along the Surat–Valsad and Surat–Baroda highway belts, checked for zoning and access.</p>
-      </div>
-      <div class="purpose-card">
-        <svg viewBox="0 0 40 40"><circle cx="20" cy="16" r="6"/><path d="M8 34 C 8 24, 14 20, 20 20 C 26 20, 32 24, 32 34"/></svg>
-        <h3>Community living land</h3>
-        <p>Larger parcels suited to co-living, farm communities, or shared residential projects.</p>
-      </div>
-      <div class="purpose-card">
-        <svg viewBox="0 0 40 40"><path d="M2 24 C 8 18, 12 30, 18 24 S 28 18, 38 24"/><path d="M2 32 C 8 26, 12 38, 18 32 S 28 26, 38 32"/></svg>
-        <h3>Riverside land</h3>
-        <p>Frontage and near-river parcels along the belt, reviewed for flood line and access rights.</p>
-      </div>
-      <div class="purpose-card">
-        <svg viewBox="0 0 40 40"><path d="M4 34 H36"/><path d="M8 34 V22 M14 34 V22 M20 34 V22 M26 34 V22 M32 34 V22"/><path d="M4 22 H36"/></svg>
-        <h3>Farm land</h3>
-        <p>Agricultural parcels around Vyara and the corridor in between, priced direct from farmer where possible.</p>
-      </div>
-      <div class="purpose-card">
-        <svg viewBox="0 0 40 40"><path d="M8 34 V18 L20 8 L32 18 V34"/><path d="M16 34 V24 H24 V34"/></svg>
-        <h3>Resort or wellness retreat land</h3>
-        <p>Quiet, scenic parcels suited to hospitality use, checked for tourism and NA conversion feasibility.</p>
-      </div>
-      <div class="purpose-card">
-        <svg viewBox="0 0 40 40"><rect x="6" y="10" width="12" height="24"/><rect x="22" y="16" width="12" height="18"/><path d="M10 16 H14 M10 22 H14 M10 28 H14"/></svg>
-        <h3>Residential or commercial land</h3>
-        <p>Plots inside and around Surat city, matched to footfall, approach road, and end use.</p>
-      </div>
-      <div class="purpose-card">
-        <svg viewBox="0 0 40 40"><path d="M20 4 L34 12 V28 L20 36 L6 28 V12 Z"/><path d="M20 4 V36 M6 12 L34 28 M34 12 L6 28"/></svg>
-        <h3>Or any other purpose</h3>
-        <p>If your project does not fit a category above, tell us the goal and we will plan around it directly.</p>
-      </div>
-    </div>
-  </div>
+<section>
+<h2>Land Categories</h2>
+<div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"><div><h3>Investment Land</h3><p>Long-term wealth creation.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80"><div><h3>Industrial Land</h3><p>Factories, logistics & warehousing.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"><div><h3>Farm & Riverside</h3><p>Weekend homes and farm projects.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"><div><h3>Wellness Retreat</h3><p>Nature-inspired developments.</p></div></div>
+</div>
 </section>
 
-<section class="service-band">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="label">What we do</p>
-      <h2>One consultant, the full acquisition, start to finish.</h2>
-      <p>We stay with you through the whole process, not just the introduction to a seller.</p>
-    </div>
-    <div class="service-list">
-      <div class="service-item"><span class="num">01</span><div><h3>Location guidance</h3><p>We shortlist based on your actual need, not just what is available.</p></div></div>
-      <div class="service-item"><span class="num">02</span><div><h3>Budgeting and viability</h3><p>We check that the parcel makes sense for your project and your numbers before you commit.</p></div></div>
-      <div class="service-item"><span class="num">03</span><div><h3>Best available pricing</h3><p>Direct from farmer where possible, or through vetted resale, always at fair market terms.</p></div></div>
-      <div class="service-item"><span class="num">04</span><div><h3>Large parcel acquisition</h3><p>We partner with you through big-parcel purchases, including assembling adjoining plots.</p></div></div>
-      <div class="service-item"><span class="num">05</span><div><h3>Due diligence and legal support</h3><p>Title check, revenue record review, and encumbrance verification before any payment.</p></div></div>
-      <div class="service-item"><span class="num">06</span><div><h3>NA conversion</h3><p>We manage the non-agricultural conversion where your project requires it.</p></div></div>
-    </div>
-  </div>
+<section>
+<h2>Our Services</h2>
+<div class="grid">
+<div class="service">✓ Direct Farmer Deals & Resale</div>
+<div class="service">✓ Land Acquisition for Large Parcels</div>
+<div class="service">✓ Legal Due Diligence & Title Verification</div>
+<div class="service">✓ NA Conversion Support</div>
+<div class="service">✓ NRI Buy / Sell Services</div>
+<div class="service">✓ Power of Attorney Management</div>
+<div class="service">✓ Documentation & Registration</div>
+<div class="service">✓ Land Title Issue Resolution</div>
+</div>
 </section>
 
-<section id="nri">
-  <div class="wrap info-split">
-    <div class="info-copy">
-      <p class="label">NRI services</p>
-      <h2>Buy or sell land here, without leaving where you are.</h2>
-      <p>We handle the process on the ground in Surat while you stay in your own country. That includes preparing documents, completing the legal process, arranging Power of Attorney, and following through to payment.</p>
-      <ul class="checklist">
-        <li>Document preparation, reviewed and shared for your sign-off</li>
-        <li>Power of Attorney arrangement for on-ground execution</li>
-        <li>Legal process managed and reported to you at each stage</li>
-        <li>Payment handled and confirmed to close the cycle</li>
-      </ul>
-    </div>
-    <div class="visual">
-      <svg viewBox="0 0 240 200">
-        <path d="M40 30 H140 V60 H190 V170 H40 Z"/>
-        <path d="M40 30 L90 90 L40 150" class="gold"/>
-        <path d="M190 60 L140 120 L190 170" class="gold"/>
-        <circle cx="90" cy="90" r="4" fill="#AD8A55" stroke="none"/>
-        <circle cx="140" cy="120" r="4" fill="#AD8A55" stroke="none"/>
-      </svg>
-    </div>
-  </div>
+<section>
+<h2>Featured Properties</h2>
+<div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"><div><h3>Industrial Plot</h3><p>Upload your property details here.</p></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"><div><h3>Farm Land</h3><p>Suitable image and description shown after upload.</p></div></div>
+</div>
 </section>
 
-<section id="title" style="background:var(--ivory-dim);">
-  <div class="wrap info-split reverse">
-    <div class="info-copy" style="order:1;">
-      <p class="label">Title clearance</p>
-      <h2>Carrying an old dispute on your land? We clear it.</h2>
-      <p>Many landowners in this region hold parcels with unclear succession, old disputes, or pending mutation entries. We work through the revenue record and legal history to resolve these, so the land is ready to sell, develop, or hand down.</p>
-      <ul class="checklist">
-        <li>Review of revenue record and past ownership history</li>
-        <li>Resolution of pending disputes or mutation entries</li>
-        <li>A clean, sale-ready title at the end of the process</li>
-      </ul>
-    </div>
-    <div class="visual" style="order:2;">
-      <svg viewBox="0 0 240 200">
-        <rect x="60" y="30" width="120" height="150" rx="2"/>
-        <path d="M78 60 H162 M78 80 H162 M78 100 H140" />
-        <path d="M78 130 H162 M78 150 H120" class="gold"/>
-        <circle cx="150" cy="140" r="18" class="gold"/>
-        <path d="M143 140 L148 146 L158 133" class="gold"/>
-      </svg>
-    </div>
-  </div>
+<section>
+<h2>Upload Property (Prototype)</h2>
+<form>
+<input placeholder="Property Title">
+<select><option>Property Type</option><option>Industrial</option><option>Investment</option><option>Farm</option><option>Residential</option><option>Commercial</option><option>Wellness Retreat</option></select>
+<input placeholder="Location">
+<input placeholder="Area">
+<input placeholder="Price">
+<textarea placeholder="Description"></textarea>
+<input type="file">
+<button type="button" onclick="alert('Prototype only. Backend/database required for live uploads.')">Upload</button>
+</form>
 </section>
 
-<section id="process">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="label">How it works</p>
-      <h2>A fixed sequence, so nothing gets missed.</h2>
-    </div>
-    <div class="process-list">
-      <div class="process-row"><span class="num">01</span><div><h3>Enquiry</h3><p>You share what you are looking for, where, and your budget.</p></div></div>
-      <div class="process-row"><span class="num">02</span><div><h3>Shortlist</h3><p>We identify matching parcels across the region and share options with you.</p></div></div>
-      <div class="process-row"><span class="num">03</span><div><h3>Site and legal check</h3><p>Physical inspection alongside revenue record and title review.</p></div></div>
-      <div class="process-row"><span class="num">04</span><div><h3>Due diligence</h3><p>Full legal and physical verification before any commitment is made.</p></div></div>
-      <div class="process-row"><span class="num">05</span><div><h3>NA conversion</h3><p>Handled where your project requires non-agricultural status.</p></div></div>
-      <div class="process-row"><span class="num">06</span><div><h3>Registration and handover</h3><p>Documentation, payment, and possession, closed out end to end.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="listings" style="background:var(--ivory-dim);">
-  <div class="wrap">
-    <div class="listing-toolbar">
-      <div class="section-head" style="margin-bottom:0;">
-        <p class="label">Land we offer</p>
-        <h2>Current parcels, by type.</h2>
-      </div>
-    </div>
-    <div class="listing-grid" id="listingGrid"></div>
-
-    <details class="add-listing">
-      <summary>+ Add a new land listing</summary>
-      <form class="listing-form" id="listingForm">
-        <div class="field">
-          <label for="lType">Land type</label>
-          <select id="lType" required>
-            <option value="">Select type</option>
-            <option>Long term investment</option>
-            <option>Industrial land</option>
-            <option>Community living land</option>
-            <option>Riverside land</option>
-            <option>Farm land</option>
-            <option>Resort or wellness retreat land</option>
-            <option>Residential or commercial land</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="lLocation">Location</label>
-          <input id="lLocation" type="text" placeholder="e.g. Kamrej, Surat–Vyara road" required>
-        </div>
-        <div class="field">
-          <label for="lSize">Size</label>
-          <input id="lSize" type="text" placeholder="e.g. 2.5 acre" required>
-        </div>
-        <div class="field">
-          <label for="lPrice">Price</label>
-          <input id="lPrice" type="text" placeholder="e.g. On request, or ₹ amount" required>
-        </div>
-        <div class="field full">
-          <label for="lDesc">Description</label>
-          <textarea id="lDesc" placeholder="Short write-up of the parcel, access, and suited use"></textarea>
-        </div>
-        <div class="field full">
-          <label for="lImage">Photo (optional)</label>
-          <input id="lImage" type="file" accept="image/*">
-        </div>
-        <div class="field full">
-          <button type="submit" class="btn btn-navy" style="align-self:start;">Add listing</button>
-        </div>
-      </form>
-    </details>
-  </div>
-</section>
-
-<section class="contact-band" id="contact">
-  <div class="wrap">
-    <p class="label">Get in touch</p>
-    <h2 style="color:var(--ivory); margin-top:10px; max-width:20ch;">Write your requirement, we will connect with you shortly.</h2>
-    <div class="contact-grid">
-      <div class="contact-detail">
-        <p>Call or message us directly on WhatsApp.</p>
-        <p class="contact-phone">+91 99989 72850</p>
-        <p>Or use the form and we will open WhatsApp with your message ready to send.</p>
-      </div>
-      <div class="wa-form">
-        <textarea id="waText" placeholder="Write your requirement here, purpose, location preference, size, and budget"></textarea>
-        <button class="btn btn-gold" id="waSend" style="align-self:start;">Send on WhatsApp</button>
-        <div class="thankyou" id="thankYou">Thank you. Your requirement has been sent. We will connect with you shortly.</div>
-      </div>
-    </div>
-  </div>
+<section id="contact">
+<h2>Tell Us Your Requirement</h2>
+<form onsubmit="sendWA();return false;">
+<input id="name" placeholder="Name">
+<input id="mobile" placeholder="Mobile">
+<textarea id="req" placeholder="Write your requirement"></textarea>
+<button>Send via WhatsApp</button>
+</form>
 </section>
 
 <footer>
-  <div class="wrap footer-row">
-    <span class="brand" style="color:var(--ivory);">Trusted <span style="color:var(--gold);">Land</span> Advisory</span>
-    <span>Serving Surat, Vyara, Valsad, Baroda, and everything in between.</span>
-  </div>
+<h3>Trusted Land Advisory</h3>
+<p>Purchase Land With Purpose</p>
+<p>Surat | Vyara | Valsad | Vadodara</p>
+<p>WhatsApp: +91 9998972850</p>
 </footer>
 
+<a class="whatsapp" href="https://wa.me/919998972850?text=Hello%20I%20am%20looking%20for%20land." target="_blank">WhatsApp</a>
+
 <script>
-  // nav toggle
-  document.getElementById('navToggle').addEventListener('click', function(){
-    document.getElementById('siteNav').classList.toggle('open');
-  });
-
-  // sample listings, shown until real ones are added
-  var sampleListings = [
-    { type:"Farm land", location:"Near Vyara, Surat–Vyara road", size:"3.2 acre", price:"On request", desc:"Level farmland with borewell access, road-facing, suited to cultivation or a small retreat.", icon:"farm" },
-    { type:"Riverside land", location:"Near Kamrej, Tapi belt", size:"1.1 acre", price:"On request", desc:"Riverside frontage parcel, checked for flood line, suited to a weekend home or small resort.", icon:"river" },
-    { type:"Industrial land", location:"Surat–Valsad highway", size:"5 acre", price:"On request", desc:"Highway-facing industrial plot with clear approach road and existing NA status.", icon:"industrial" },
-    { type:"Residential or commercial land", location:"Surat city periphery", size:"4000 sq. yd", price:"On request", desc:"Corner plot suited to residential development or a commercial project.", icon:"residential" }
-  ];
-
-  var icons = {
-    farm: '<svg viewBox="0 0 40 40"><path d="M4 34 H36"/><path d="M8 34 V22 M14 34 V22 M20 34 V22 M26 34 V22 M32 34 V22"/><path d="M4 22 H36"/></svg>',
-    river: '<svg viewBox="0 0 40 40"><path d="M2 24 C 8 18, 12 30, 18 24 S 28 18, 38 24"/><path d="M2 32 C 8 26, 12 38, 18 32 S 28 26, 38 32"/></svg>',
-    industrial: '<svg viewBox="0 0 40 40"><rect x="6" y="16" width="10" height="18"/><rect x="18" y="8" width="10" height="26"/><path d="M6 16 L11 10 L16 16"/><path d="M28 22 H34 V34 H28"/></svg>',
-    residential: '<svg viewBox="0 0 40 40"><rect x="6" y="10" width="12" height="24"/><rect x="22" y="16" width="12" height="18"/><path d="M10 16 H14 M10 22 H14 M10 28 H14"/></svg>',
-    other: '<svg viewBox="0 0 40 40"><path d="M20 4 L34 12 V28 L20 36 L6 28 V12 Z"/></svg>'
-  };
-
-  function iconForType(type){
-    if(type === "Farm land") return icons.farm;
-    if(type === "Riverside land") return icons.river;
-    if(type === "Industrial land") return icons.industrial;
-    if(type === "Residential or commercial land") return icons.residential;
-    return icons.other;
-  }
-
-  function buildCard(item){
-    var card = document.createElement('div');
-    card.className = 'listing-card';
-    var media = '<div class="listing-media">' + (item.image ? '<img src="'+item.image+'" alt="'+item.location+'">' : iconForType(item.type)) + '</div>';
-    card.innerHTML = media +
-      '<div class="listing-body">' +
-        '<span class="listing-type">' + item.type + '</span>' +
-        '<h3>' + item.location + '</h3>' +
-        '<div class="listing-meta"><span>' + item.size + '</span></div>' +
-        '<p class="desc">' + (item.desc || '') + '</p>' +
-        '<div class="price">' + item.price + '</div>' +
-      '</div>';
-    return card;
-  }
-
-  function loadStored(){
-    try{
-      var raw = localStorage.getItem('landListings');
-      return raw ? JSON.parse(raw) : [];
-    }catch(e){ return []; }
-  }
-
-  function render(){
-    var grid = document.getElementById('listingGrid');
-    grid.innerHTML = '';
-    var stored = loadStored();
-    stored.concat(sampleListings).forEach(function(item){
-      grid.appendChild(buildCard(item));
-    });
-  }
-
-  render();
-
-  document.getElementById('listingForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    var type = document.getElementById('lType').value;
-    var location = document.getElementById('lLocation').value;
-    var size = document.getElementById('lSize').value;
-    var price = document.getElementById('lPrice').value;
-    var desc = document.getElementById('lDesc').value;
-    var fileInput = document.getElementById('lImage');
-
-    function saveAndRender(imageData){
-      var stored = loadStored();
-      stored.unshift({ type:type, location:location, size:size, price:price, desc:desc, image:imageData || null });
-      try{ localStorage.setItem('landListings', JSON.stringify(stored)); }catch(err){}
-      render();
-      e.target.reset();
-      document.querySelector('.add-listing').removeAttribute('open');
-    }
-
-    if(fileInput.files && fileInput.files[0]){
-      var reader = new FileReader();
-      reader.onload = function(evt){ saveAndRender(evt.target.result); };
-      reader.readAsDataURL(fileInput.files[0]);
-    } else {
-      saveAndRender(null);
-    }
-  });
-
-  // whatsapp send
-  document.getElementById('waSend').addEventListener('click', function(){
-    var text = document.getElementById('waText').value.trim();
-    var phone = '919998972850';
-    var message = text ? text : 'I would like to know more about land options in the Surat region.';
-    var url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
-    window.open(url, '_blank');
-    document.getElementById('thankYou').classList.add('show');
-  });
+function sendWA(){
+let m="Name: "+document.getElementById("name").value+
+"%0AMobile: "+document.getElementById("mobile").value+
+"%0ARequirement: "+document.getElementById("req").value;
+window.open("https://wa.me/919998972850?text="+m);
+alert("Thank you! We will connect with you shortly.");
+}
 </script>
 
 </body>
